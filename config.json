@@ -1,0 +1,10 @@
+{
+    "hosts": {
+        "localhost": "127.0.0.1",
+        "test.com": "129.367.1.1",
+        Multiple hosts on line [8] in file [/Users/dvvedz/code/bash/temo/hosts.txt]
+        Multiple hosts on line [9] in file [/Users/dvvedz/code/bash/temo/hosts.txt]
+        Multiple hosts on line [10] in file [/Users/dvvedz/code/bash/temo/hosts.txt]
+        "test3.com": "129.367.1.3",
+    }
+}
