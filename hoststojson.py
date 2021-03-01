@@ -24,7 +24,6 @@ def generate_2d_list():
 
     return list_of_2d
 print('{\n    "hosts": {')
-hosts_last = []
 for list in generate_2d_list():
     ip = list[0]
     hosts = list[1:]
