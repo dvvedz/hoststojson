@@ -3,25 +3,37 @@
 import sys
 import os
 
-print("{")
-print('    "hosts": {')
-count = 0
+def generate_2d_list():
+    count = 0
 
-with open(sys.argv[1], "r") as f:
-    for line in f.readlines():
-        count = count + 1
-        line = line.rstrip()
+    with open(sys.argv[1], "r") as f:
+        list_of_2d = []
 
-        if not "#" in line:
-            word = line.split(" ")
+        for line in f:
+            list_2d = []
+            count = count + 1
+            line = line.rstrip()
 
-            host = word[-1].rstrip()
-            ip = word[0].rstrip()
+            if not "#" in line:
+                word = line.split(" ")
 
-            if not len(host) == 0 or not len(ip) == 0:
-                if not len(word) > 2: print("        \""+ host + "\": \""+ ip + "\",")
-                else: print(f"        Multiple hosts on line [{count}] in file [{os.getcwd()}/{sys.argv[1]}]")
+                for w in word:
+                    if w:
+                        list_2d.append(w)
+                        list_of_2d.append(list_2d)
 
+    return list_of_2d
+print('{\n    "hosts": {')
+hosts_last = []
+for list in generate_2d_list():
+    ip = list[0]
+    hosts = list[1:]
+    hosts_with_comma = hosts[:-1]
+    host_last = hosts[-1]
 
-    print("    }")
-    print("}")
+    print('        "', end="")
+    for lis in hosts_with_comma:
+        print(f'{lis} ', end="")
+    print(f'{host_last}": "{ip}",\n', end="")
+print('        "DELETE":"ME"')
+print("    }\n}")
