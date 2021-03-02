@@ -21,18 +21,28 @@ def generate_2d_list():
                     if w:
                         list_2d.append(w)
                         list_of_2d.append(list_2d)
+                        break
+                    break
 
     return list_of_2d
-print('{\n    "hosts": {')
-for list in generate_2d_list():
-    ip = list[0]
-    hosts = list[1:]
-    hosts_with_comma = hosts[:-1]
-    host_last = hosts[-1]
+print(generate_2d_list())
 
-    print('        "', end="")
-    for lis in hosts_with_comma:
-        print(f'{lis} ', end="")
-    print(f'{host_last}": "{ip}",\n', end="")
-print('        "DELETE":"ME"')
-print("    }\n}")
+for g in generate_2d_list():
+    print(g)
+
+
+
+def testing():
+    print('{\n    "hosts": {')
+    for list in generate_2d_list():
+        ip = list[0]
+        hosts = list[1:]
+        hosts_with_comma = hosts[:-1]
+        host_last = hosts[-1]
+
+        print('        "', end="")
+        for lis in hosts_with_comma:
+            print(f'{lis} ', end="")
+        print(f'{host_last}": "{ip}",\n', end="")
+    print('        "DELETE":"ME"')
+    print("    }\n}")
