@@ -1,0 +1,22 @@
+{
+  "name": "hoststojson",
+  "version": "1.0.0",
+  "description": "This tool converts hosts system file to json format, to be used in Cypress env",
+  "main": "hoststojson.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvvedz/hoststojson.git"
+  },
+  "keywords": [
+    "hoststojson"
+  ],
+  "author": "ogow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvvedz/hoststojson/issues"
+  },
+  "homepage": "https://github.com/dvvedz/hoststojson#readme"
+}

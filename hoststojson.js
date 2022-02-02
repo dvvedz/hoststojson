@@ -1,5 +1,6 @@
+#!/usr/bin/env node
+
 const process = require('process');
-const stream = require('stream');
 
 function hostsToJson() {
     let userInput = process.argv[2]
@@ -41,10 +42,12 @@ function hostsToJson() {
             })
             return hostsObject
         } catch (err) {
-            console.error(err)
+            console.log("Is arg1 really a file\n")
+            process.exit(1)
         }
     } else {
-        console.error("Error: ", userInput)
+        console.log("arg1 should be a hostfile\n./hoststojson <file>\n")
+        process.exit(2)
     }
 }
 
